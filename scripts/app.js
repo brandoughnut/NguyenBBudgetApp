@@ -26,7 +26,6 @@ saveBudget.addEventListener('click', () => {
     creatingElements();
 
     inputBudget.value = "";
-    console.log(newBudget);
 });
 
 
@@ -118,7 +117,6 @@ const updateBudget = () => {
     let expenseArr = getLocalStorage();
     let budget = getLocalStorageBudget();
 
-    console.log(budget);
     expenseArr.map((number) => {
         budget -= number.Value;
     });
