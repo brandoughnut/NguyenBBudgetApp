@@ -39,7 +39,7 @@ addExpense.addEventListener('click', () => {
         let myObject = {Name: name, Value: expense}
         saveToLocalStorage(myObject);
         creatingElements();
-        loadBudget();
+        updateBudget();
     }
     
     expenseName.value = "";
@@ -75,7 +75,7 @@ const creatingElements = () => {
             outerDiv.remove();
             outerDivv.remove();
             removeFromLocalStorage(elements);
-            loadBudget();
+            updateBudget();
         });
     
         let secondDiv = document.createElement('div');
@@ -114,7 +114,7 @@ const creatingElements = () => {
 
 }
 
-const loadBudget = () => {
+const updateBudget = () => {
     let expenseArr = getLocalStorage();
     let budget = getLocalStorageBudget();
 
@@ -135,7 +135,7 @@ const loadBudget = () => {
 
 const onLoad = () => {
     creatingElements();
-    loadBudget();
+    updateBudget();
 }
 
 onLoad();
